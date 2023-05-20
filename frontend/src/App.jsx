@@ -18,7 +18,11 @@ const App = () => {
       {/* <PhotoList /> */}
       {/* <TopicList /> */}
       {/* <TopNavigationBar /> */}
-      <HomeRoute />
+      <HomeRoute
+        photos={photos}
+        topics={topics}
+      
+      />
     
     </div>
 

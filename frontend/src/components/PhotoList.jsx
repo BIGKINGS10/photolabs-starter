@@ -7,7 +7,8 @@ const PhotoList = (props) => {
   const list = props.photos.map(photo =>
     <PhotoListItem
       key={photo.id}
-      imageSource={photo.imageSource}
+      // imageSource={photo.imageSource}
+      imageSource={photo.urls.regular}
     />
 
   );
