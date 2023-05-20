@@ -8,7 +8,11 @@ const HomeRoute = (props) =>
   <div className="home-route">
     {/* Insert React */}
     <TopNavigationBar topics={props.topics} />
-    <PhotoList photos={props.photos} />
+    <PhotoList 
+    photos={props.photos} 
+    favorites={props.favorites}
+    toggleFavorite={props.toggleFavorite}
+    />
   </div>
 
 export default HomeRoute;

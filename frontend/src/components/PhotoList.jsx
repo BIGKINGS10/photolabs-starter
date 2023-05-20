@@ -6,9 +6,14 @@ import PhotoListItem from './PhotoListItem';
 const PhotoList = (props) => {
   const list = props.photos.map(photo =>
     <PhotoListItem
-      key={photo.id}
+      
       // imageSource={photo.imageSource}
+      key={photo.id}
+      id={photo.id}
       imageSource={photo.urls.regular}
+      favorites={props.favorites}
+      toggleFavorite={props.toggleFavorite}
+
     />
 
   );

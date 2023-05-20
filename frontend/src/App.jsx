@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 import PhotoListItem from './components/PhotoListItem';
 import './App.scss';
@@ -10,6 +10,19 @@ import photos from './mocks/photos';
 
 // Note: Rendering a single component to build components in isolation
 const App = () => {
+
+  const [favorites, setFavorites] = useState([]);
+
+  const toggleFavorite = function(id){
+    if(favorites.includes(id)){
+      console.log("removing favorites:", id);
+      setFavorites(favorites.filter(i => i != id));
+      return;
+    }
+
+    console.log("adding favorites:", id);
+    setFavorites([...favorites, id]);
+  }
  
 
   return (
@@ -21,6 +34,8 @@ const App = () => {
       <HomeRoute
         photos={photos}
         topics={topics}
+        favorites={favorites}
+        toggleFavorite={toggleFavorite}
       
       />
     
